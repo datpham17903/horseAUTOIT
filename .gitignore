@@ -1,65 +1,29 @@
-# --- project docs (design notes, specs, reviews) ---
-docs/
-*.local.md
+# This repository publishes only its README and this ignore file.
+# Everything else — source, docs, build output, local state — stays local and is
+# never committed. The rule below is a whitelist: ignore every top-level entry,
+# then re-admit exactly the two files that belong here.
 
-# --- Rust ---
-/target/
-**/target/
-**/*.rs.bk
-*.pdb
-Cargo.lock.bak
+/*
+!.gitignore
+!README.md
 
-# --- state, secrets, credentials ---
-/state/
-/secrets/
+# Belt and braces: even if the whitelist above is ever relaxed, these must never
+# be committed.
+*.env
+.env.*
 *.key
 *.pem
 *.enc
 *.keyring
 keyring.json
 keyring.bin
-.env
-.env.*
-
-# --- runtime artifacts ---
-/logs/
-*.log
 *.wal
 *.snapshot
-/captures/
-/traces/
-*.jsonl
-*.jsonl.gz
-
-# --- game data caches (never redistribute) ---
-/master/
 *.mdb
 *.lz4
-
-# --- Android ---
-/android/build/
-/android/.gradle/
 *.apk
 *.aab
 *.keystore
-local.properties
-
-# --- web build output ---
-/web/dist/
-/web/pkg/
-*.wasm
-
-# --- editors / OS ---
-.vscode/
-.idea/
-*.swp
-*~
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# --- agent / tooling scratch ---
-.claude/
-.codex-out/
-.agents/
-scratchpad/
+*.log
+*.jsonl
+*.jsonl.gz
