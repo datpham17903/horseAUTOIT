@@ -1,0 +1,65 @@
+# --- project docs (design notes, specs, reviews) ---
+docs/
+*.local.md
+
+# --- Rust ---
+/target/
+**/target/
+**/*.rs.bk
+*.pdb
+Cargo.lock.bak
+
+# --- state, secrets, credentials ---
+/state/
+/secrets/
+*.key
+*.pem
+*.enc
+*.keyring
+keyring.json
+keyring.bin
+.env
+.env.*
+
+# --- runtime artifacts ---
+/logs/
+*.log
+*.wal
+*.snapshot
+/captures/
+/traces/
+*.jsonl
+*.jsonl.gz
+
+# --- game data caches (never redistribute) ---
+/master/
+*.mdb
+*.lz4
+
+# --- Android ---
+/android/build/
+/android/.gradle/
+*.apk
+*.aab
+*.keystore
+local.properties
+
+# --- web build output ---
+/web/dist/
+/web/pkg/
+*.wasm
+
+# --- editors / OS ---
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- agent / tooling scratch ---
+.claude/
+.codex-out/
+.agents/
+scratchpad/
